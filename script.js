@@ -1,216 +1,244 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+// ==========================
+// BAYLOS SHOP
+// script.js
+// ==========================
+
+// Data Produk
+const products = [
+{
+id:1,
+nama:"Produk 1",
+harga:120000
+},
+{
+id:2,
+nama:"Produk 2",
+harga:99000
+},
+{
+id:3,
+nama:"Produk 3",
+harga:150000
+},
+{
+id:4,
+nama:"Produk 4",
+harga:175000
+}
+];
+
+// Keranjang
+let cart = [];
+
+// Tombol Beli
+const buttons = document.querySelectorAll(".card button");
+
+buttons.forEach((btn,index)=>{
+
+btn.addEventListener("click",()=>{
+
+cart.push(products[index]);
+
+alert(products[index].nama+" berhasil ditambahkan ke keranjang");
+
+console.log(cart);
+
+});
+
+});
+
+// ==========================
+// SEARCH
+// ==========================
+
+const searchInput=document.querySelector(".menu input");
+
+searchInput.addEventListener("keyup",()=>{
+
+let keyword=searchInput.value.toLowerCase();
+
+let cards=document.querySelectorAll(".card");
+
+cards.forEach(card=>{
+
+let nama=card.querySelector("h3").innerText.toLowerCase();
+
+if(nama.indexOf(keyword)>-1){
+
+card.style.display="block";
+
+}else{
+
+card.style.display="none";
+
 }
 
-body{
-    background:#f8f7f3;
-    color:#222;
+});
+
+});
+
+// ==========================
+// DARK MODE
+// ==========================
+
+const darkButton=document.createElement("button");
+
+darkButton.innerHTML="🌙";
+
+darkButton.style.marginLeft="10px";
+
+document.querySelector(".menu").appendChild(darkButton);
+
+let dark=false;
+
+darkButton.onclick=()=>{
+
+dark=!dark;
+
+if(dark){
+
+document.body.style.background="#111";
+
+document.body.style.color="#fff";
+
+darkButton.innerHTML="☀";
+
+}else{
+
+document.body.style.background="#f8f7f3";
+
+document.body.style.color="#222";
+
+darkButton.innerHTML="🌙";
+
 }
 
-header{
-    width:100%;
-    background:#0f1f3d;
-    color:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+};
+
+// ==========================
+// TOTAL BELANJA
+// ==========================
+
+const totalBox=document.createElement("div");
+
+totalBox.style.position="fixed";
+
+totalBox.style.bottom="20px";
+
+totalBox.style.right="20px";
+
+totalBox.style.background="#0f1f3d";
+
+totalBox.style.color="white";
+
+totalBox.style.padding="15px";
+
+totalBox.style.borderRadius="10px";
+
+totalBox.innerHTML="Keranjang : 0";
+
+document.body.appendChild(totalBox);
+
+function updateCart(){
+
+let total=0;
+
+cart.forEach(item=>{
+
+total+=item.harga;
+
+});
+
+totalBox.innerHTML=
+
+"🛒 "+cart.length+
+
+"<br>Total : Rp "+total.toLocaleString("id-ID");
+
 }
 
-.logo h2{
-    color:#d4af37;
-    font-size:28px;
+// Update ketika klik beli
+
+buttons.forEach((btn,index)=>{
+
+btn.addEventListener("click",()=>{
+
+cart.push(products[index]);
+
+updateCart();
+
+});
+
+});
+
+// ==========================
+// NOTIFIKASI
+// ==========================
+
+function toast(text){
+
+const notif=document.createElement("div");
+
+notif.innerHTML=text;
+
+notif.style.position="fixed";
+
+notif.style.top="20px";
+
+notif.style.right="20px";
+
+notif.style.background="#16a34a";
+
+notif.style.color="white";
+
+notif.style.padding="15px";
+
+notif.style.borderRadius="10px";
+
+notif.style.zIndex="999";
+
+document.body.appendChild(notif);
+
+setTimeout(()=>{
+
+notif.remove();
+
+},2000);
+
 }
 
-nav{
-    display:flex;
-    gap:25px;
-}
+buttons.forEach((btn,index)=>{
 
-nav a{
-    color:#fff;
-    text-decoration:none;
-    transition:.3s;
-}
+btn.addEventListener("click",()=>{
 
-nav a:hover{
-    color:#d4af37;
-}
+toast(products[index].nama+" berhasil ditambahkan");
 
-.menu{
-    display:flex;
-    gap:10px;
-}
+});
 
-.menu input{
-    padding:10px 15px;
-    border:none;
-    border-radius:30px;
-    width:220px;
-}
+});
 
-.login{
-    background:#d4af37;
-    color:white;
-    border:none;
-    border-radius:30px;
-    padding:10px 25px;
-    cursor:pointer;
-    transition:.3s;
-}
+// ==========================
+// LOGIN
+// ==========================
 
-.login:hover{
-    transform:scale(1.05);
-}
+const login=document.querySelector(".login");
 
-.hero{
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    padding:70px 8%;
-    flex-wrap:wrap;
-}
+login.onclick=()=>{
 
-.hero-text{
-    flex:1;
-    min-width:300px;
-}
+alert("Halaman Login akan dibuat pada tahap berikutnya.");
 
-.hero-text h1{
-    font-size:50px;
-    color:#0f1f3d;
-    margin-bottom:15px;
-}
+};
 
-.hero-text p{
-    font-size:18px;
-    margin-bottom:30px;
-    color:#555;
-}
+// ==========================
+// HERO BUTTON
+// ==========================
 
-.hero-text button{
-    padding:15px 35px;
-    border:none;
-    border-radius:40px;
-    background:#d4af37;
-    color:white;
-    cursor:pointer;
-    transition:.3s;
-}
+document.querySelector(".hero button").onclick=()=>{
 
-.hero-text button:hover{
-    transform:translateY(-5px);
-}
+document.getElementById("produk").scrollIntoView({
 
-.hero-image{
-    flex:1;
-    text-align:center;
-}
+behavior:"smooth"
 
-.hero-image img{
-    width:90%;
-    max-width:550px;
-}
+});
 
-.title{
-    text-align:center;
-    margin-top:30px;
-    margin-bottom:40px;
-    color:#0f1f3d;
-    font-size:35px;
-}
-
-.produk{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-    gap:30px;
-    padding:0 8% 70px;
-}
-
-.card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card img{
-    width:100%;
-    height:220px;
-    object-fit:cover;
-}
-
-.card h3{
-    padding:15px;
-}
-
-.card p{
-    padding:0 15px 15px;
-    color:#d4af37;
-    font-weight:bold;
-}
-
-.card button{
-    width:90%;
-    margin:0 5% 20px;
-    padding:12px;
-    border:none;
-    border-radius:10px;
-    background:#0f1f3d;
-    color:white;
-    cursor:pointer;
-}
-
-.card button:hover{
-    background:#d4af37;
-}
-
-footer{
-    background:#0f1f3d;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-@media(max-width:768px){
-
-header{
-    flex-direction:column;
-    gap:15px;
-}
-
-nav{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-.hero{
-    flex-direction:column;
-    text-align:center;
-}
-
-.hero-text h1{
-    font-size:36px;
-}
-
-.menu{
-    flex-direction:column;
-    width:100%;
-}
-
-.menu input{
-    width:100%;
-}
-}
+};
