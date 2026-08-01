@@ -1,0 +1,11 @@
+assets/
+│── .gitkeep
+│
+├── produk/
+│     └── .gitkeep
+│
+├── icons/
+│     └── .gitkeep
+│
+└── background/
+      └── .gitkeep
