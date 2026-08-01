@@ -247,3 +247,37 @@ behavior:"smooth"
 });
 
 };
+// ============================
+// FLASH SALE COUNTDOWN
+// ============================
+
+let totalDetik = 6 * 60 * 60; // 6 jam
+
+function updateCountdown(){
+
+let jam = Math.floor(totalDetik/3600);
+
+let menit = Math.floor((totalDetik%3600)/60);
+
+let detik = totalDetik%60;
+
+document.getElementById("jam").innerHTML =
+String(jam).padStart(2,"0");
+
+document.getElementById("menit").innerHTML =
+String(menit).padStart(2,"0");
+
+document.getElementById("detik").innerHTML =
+String(detik).padStart(2,"0");
+
+if(totalDetik>0){
+
+totalDetik--;
+
+}
+
+}
+
+setInterval(updateCountdown,1000);
+
+updateCountdown();
