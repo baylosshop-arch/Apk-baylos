@@ -348,3 +348,16 @@ border-radius:20px;
 box-shadow:0 15px 40px rgba(0,0,0,.15);
 
 }
+.hero-banner{
+    width:100%;
+    margin:20px auto;
+    display:flex;
+    justify-content:center;
+}
+
+.banner-img{
+    width:95%;
+    max-width:1400px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
