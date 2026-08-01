@@ -1011,3 +1011,79 @@ background:#00AA5B;
 background:#00894d;
 
 }
+
+/*=========================
+KATEGORI PREMIUM
+=========================*/
+
+.kategori-premium{
+
+max-width:1200px;
+
+margin:60px auto;
+
+padding:0 20px;
+
+}
+
+.kategori-premium h2{
+
+margin-bottom:25px;
+
+color:#0B2F6B;
+
+}
+
+.kategori-grid{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+
+gap:20px;
+
+}
+
+.kategori-card{
+
+background:white;
+
+padding:25px;
+
+text-align:center;
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.kategori-card:hover{
+
+transform:translateY(-8px);
+
+box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+.kategori-icon{
+
+font-size:45px;
+
+margin-bottom:15px;
+
+}
+
+.kategori-card p{
+
+font-weight:bold;
+
+margin:0;
+
+color:#333;
+
+}
