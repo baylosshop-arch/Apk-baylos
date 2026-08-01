@@ -1,11 +1,18 @@
 assets/
-│── .gitkeep
+│── logo.png
+│── banner.jpg
 │
 ├── produk/
-│     └── .gitkeep
+│   ├── 1.jpg
+│   ├── 2.jpg
+│   ├── 3.jpg
+│   └── 4.jpg
 │
 ├── icons/
-│     └── .gitkeep
+│   ├── cart.png
+│   ├── user.png
+│   ├── search.png
+│   └── whatsapp.png
 │
 └── background/
-      └── .gitkeep
+    └── hero-bg.jpg
