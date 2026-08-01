@@ -24,6 +24,11 @@ harga:150000
 id:4,
 nama:"Produk 4",
 harga:175000
+},
+{ 
+id:5,
+nama:"Produk 5",
+harga:275000
 }
 ];
 
