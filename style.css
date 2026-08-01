@@ -537,4 +537,48 @@ HEADER
     font-size:20px;
 }
 
+/*=========================
+KATEGORI
+=========================*/
+
+.kategori{
+    max-width:1200px;
+    margin:40px auto;
+    padding:0 20px;
+}
+
+.kategori h2{
+    margin-bottom:20px;
+    color:#0b2f6b;
+}
+
+.kategori-list{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+    gap:20px;
+}
+
+.kategori-item{
+    background:#fff;
+    border-radius:18px;
+    text-align:center;
+    padding:20px;
+    cursor:pointer;
+    transition:.3s;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.kategori-item:hover{
+    transform:translateY(-8px);
+}
+
+.icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.kategori-item p{
+    font-weight:bold;
+}
+
 }
