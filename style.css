@@ -265,3 +265,86 @@ nav{
 .menu a:hover{
     color:#0F4C81;
 }
+/* HERO */
+
+.hero{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:70px;
+
+background:#f5f7fb;
+
+}
+
+.hero-left{
+
+width:50%;
+
+}
+
+.hero-left h1{
+
+font-size:48px;
+
+color:#0F4C81;
+
+margin-bottom:20px;
+
+}
+
+.hero-left p{
+
+font-size:18px;
+
+color:#666;
+
+margin-bottom:30px;
+
+}
+
+.hero-btn{
+
+display:inline-block;
+
+padding:15px 35px;
+
+background:#0F4C81;
+
+color:white;
+
+border-radius:10px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.hero-btn:hover{
+
+background:#D4AF37;
+
+}
+
+.hero-right{
+
+width:45%;
+
+}
+
+.hero-right img{
+
+width:100%;
+
+border-radius:20px;
+
+box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+}
