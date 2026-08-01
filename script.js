@@ -281,3 +281,50 @@ totalDetik--;
 setInterval(updateCountdown,1000);
 
 updateCountdown();
+
+//=========================
+// SLIDER OTOMATIS
+//=========================
+
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let currentSlide = 0;
+
+function showSlide(index){
+
+slides.forEach(slide=>slide.classList.remove("active"));
+dots.forEach(dot=>dot.classList.remove("active"));
+
+slides[index].classList.add("active");
+dots[index].classList.add("active");
+
+}
+
+setInterval(()=>{
+
+currentSlide++;
+
+if(currentSlide>=slides.length){
+
+currentSlide=0;
+
+}
+
+showSlide(currentSlide);
+
+},4000);
+
+// =========================
+// KLIK KATEGORI
+// =========================
+
+document.querySelectorAll(".kategori-card").forEach(card=>{
+
+card.addEventListener("click",()=>{
+
+alert("Fitur kategori akan segera tersedia.");
+
+});
+
+});
