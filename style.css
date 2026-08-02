@@ -9,19 +9,77 @@ body{
     background:#f8f7f3;
     color:#222;
 }
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:#ffffff;
+box-shadow:0 2px 10px rgba(0,0,0,.08);
+position:sticky;
+top:0;
+z-index:999;
+}
 
-header{
-    width:100%;
-    background:#0f1f3d;
-    color:#fff;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:18px 8%;
-    position:sticky;
-    top:0;
-    z-index:1000;
-    box-shadow:0 5px 15px rgba(0,0,0,.15);
+.logo h2{
+margin:0;
+color:#00a859;
+font-size:32px;
+font-weight:700;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:600;
+}
+
+.menu-right{
+display:flex;
+align-items:center;
+gap:18px;
+}
+
+.search-box input{
+width:320px;
+padding:12px 18px;
+border-radius:30px;
+border:1px solid #ddd;
+outline:none;
+}
+
+.login-btn{
+background:#00a859;
+color:white;
+padding:10px 22px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:bold;
+}
+
+.cart-icon,
+.user-icon,
+.wishlist{
+font-size:24px;
+cursor:pointer;
+position:relative;
+}
+
+#cart-count{
+position:absolute;
+top:-8px;
+right:-8px;
+background:red;
+color:white;
+font-size:12px;
+padding:2px 6px;
+border-radius:50%;
 }
 
 .logo h2{
