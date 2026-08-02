@@ -381,3 +381,19 @@ font-size:26px;
 cursor:pointer;
 
 }
+
+btn.addEventListener("click",function(){
+
+jumlahKeranjang++;
+
+cartCount.innerHTML=jumlahKeranjang;
+
+cartCount.classList.add("pop");
+
+setTimeout(function(){
+
+cartCount.classList.remove("pop");
+
+},300);
+
+});
